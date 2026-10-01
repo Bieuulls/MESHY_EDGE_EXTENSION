@@ -1,0 +1,16 @@
+# Node & OS
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# 3D Binaries (large files)
+*.glb
+*.gltf
+*.fbx
+*.obj
+*.zip
+
+# Python
+__pycache__/
+*.pyc

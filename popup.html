@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Meshy 3D Downloader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="popup-header">
+      <div class="header-brand">
+        <span class="logo-icon">📦</span>
+        <div>
+          <h1>Meshy Downloader</h1>
+          <span class="version-tag">Edge v1.0</span>
+        </div>
+      </div>
+      <div class="status-indicator" id="status-dot" title="Status da conexão"></div>
+    </div>
+
+    <!-- Active on Meshy View -->
+    <div id="view-active" class="view-panel">
+      <div class="stats-banner">
+        <div class="stats-box">
+          <span class="stats-number" id="popup-model-count">0</span>
+          <span class="stats-label">Modelos 3D Detectados</span>
+        </div>
+        <button class="btn-refresh" id="btn-scroll-load" title="Rolar e forçar carregamento">
+          🔄 Carregar Tudo
+        </button>
+      </div>
+
+      <div class="options-box">
+        <span class="box-title">Formatos para o Blender:</span>
+        <div class="format-grid">
+          <label class="check-item">
+            <input type="checkbox" id="pop-chk-glb" checked>
+            <span>.GLB (glTF)</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" id="pop-chk-fbx" checked>
+            <span>.FBX (Rigs)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="cta-section">
+        <button class="btn-primary" id="btn-popup-download-all">
+          ⚡ Baixar Tudo para o Blender
+        </button>
+      </div>
+
+      <div class="tip-box">
+        💡 <b>Dica:</b> No painel do Meshy, use <b>📑 Varrer Páginas</b> para ler todas as 3 páginas e baixar os modelos organizados por pastas!
+      </div>
+    </div>
+
+    <!-- Inactive View (Not on Meshy) -->
+    <div id="view-inactive" class="view-panel" style="display: none;">
+      <div class="inactive-box">
+        <span class="inactive-icon">🌐</span>
+        <h3>Meshy.ai não detectado</h3>
+        <p>Abra o site do Meshy.ai para detectar seus modelos 3D automaticamente.</p>
+        <button class="btn-primary" id="btn-open-meshy">
+          Abrir Meshy.ai
+        </button>
+      </div>
+    </div>
+
+    <div class="popup-footer">
+      <span>Pasta de destino: <code>Downloads/Meshy_Blender</code></span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

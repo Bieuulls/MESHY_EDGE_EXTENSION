@@ -1,0 +1,78 @@
+{
+  "manifest_version": 3,
+  "name": "Meshy.ai 3D Bulk Downloader",
+  "version": "1.0.0",
+  "description": "Baixe facilmente todos os modelos 3D (.GLB, .FBX, .OBJ) e assets gerados no Meshy.ai em lote com um clique.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Meshy.ai 3D Downloader"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "downloads",
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*.meshy.ai/*",
+    "https://meshy.ai/*",
+    "https://assets.meshy.ai/*",
+    "https://api.meshy.ai/*",
+    "https://*.meshy.cn/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.meshy.ai/*",
+        "https://meshy.ai/*",
+        "https://*.meshy.cn/*"
+      ],
+      "js": [
+        "interceptor.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*.meshy.ai/*",
+        "https://meshy.ai/*",
+        "https://*.meshy.cn/*"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "interceptor.js",
+        "icons/*"
+      ],
+      "matches": [
+        "https://*.meshy.ai/*",
+        "https://meshy.ai/*",
+        "https://*.meshy.cn/*"
+      ]
+    }
+  ]
+}

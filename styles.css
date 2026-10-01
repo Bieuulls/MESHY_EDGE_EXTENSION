@@ -1,0 +1,514 @@
+/* Meshy.ai Bulk Downloader - Design System & Styles */
+
+:root {
+  --meshy-dl-bg: rgba(14, 15, 18, 0.88);
+  --meshy-dl-card-bg: rgba(24, 25, 30, 0.95);
+  --meshy-dl-border: rgba(255, 255, 255, 0.12);
+  --meshy-dl-accent: #c5f955;
+  --meshy-dl-accent-hover: #b4ea40;
+  --meshy-dl-accent-text: #0a0a0a;
+  --meshy-dl-text-primary: #ffffff;
+  --meshy-dl-text-muted: rgba(255, 255, 255, 0.6);
+  --meshy-dl-pill-bg: rgba(255, 255, 255, 0.08);
+  --meshy-dl-pill-hover: rgba(197, 249, 85, 0.2);
+  --meshy-dl-shadow: 0 12px 40px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.meshy-hud-root {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483640;
+  font-family: 'Barlow', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--meshy-dl-text-primary);
+  font-size: 13px;
+  pointer-events: auto;
+}
+
+/* Main Card */
+.meshy-hud-card {
+  width: 360px;
+  max-height: 540px;
+  background: var(--meshy-dl-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--meshy-dl-border);
+  border-radius: 16px;
+  box-shadow: var(--meshy-dl-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: meshySlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes meshySlideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Header */
+.meshy-hud-header {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid var(--meshy-dl-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.meshy-hud-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.meshy-hud-icon {
+  font-size: 16px;
+}
+
+.meshy-hud-name {
+  font-size: 13.5px;
+  letter-spacing: -0.2px;
+}
+
+.meshy-hud-badge {
+  background: var(--meshy-dl-accent);
+  color: var(--meshy-dl-accent-text);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 20px;
+  line-height: 1;
+}
+
+.meshy-hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meshy-hud-btn-icon {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--meshy-dl-text-primary);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.meshy-hud-btn-icon:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.meshy-hud-btn-icon.active {
+  background: rgba(197, 249, 85, 0.2);
+  border-color: var(--meshy-dl-accent);
+  color: var(--meshy-dl-accent);
+}
+
+/* Body */
+.meshy-hud-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+/* Format selector */
+.meshy-format-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.meshy-section-label {
+  font-size: 11.5px;
+  color: var(--meshy-dl-text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meshy-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #dedede;
+}
+
+.meshy-checkbox-label input[type="checkbox"] {
+  accent-color: var(--meshy-dl-accent);
+  cursor: pointer;
+}
+
+/* CTA Download All */
+.meshy-hud-cta-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.meshy-btn-download-all {
+  background: var(--meshy-dl-accent);
+  color: var(--meshy-dl-accent-text);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(197, 249, 85, 0.35);
+}
+
+.meshy-btn-download-all:hover:not(:disabled) {
+  background: var(--meshy-dl-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(197, 249, 85, 0.45);
+}
+
+.meshy-btn-download-all:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.meshy-btn-download-all:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Progress bar */
+.meshy-progress-box {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meshy-progress-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.meshy-progress-bar-bg {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.meshy-progress-bar-fill {
+  height: 100%;
+  background: var(--meshy-dl-accent);
+  border-radius: 4px;
+  transition: width 0.25s ease;
+}
+
+.meshy-progress-filename {
+  font-size: 10.5px;
+  color: var(--meshy-dl-text-muted);
+  margin-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* List section */
+.meshy-list-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  overflow: hidden;
+}
+
+.meshy-search-row {
+  display: flex;
+}
+
+.meshy-search-field {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 12px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.meshy-search-field:focus {
+  border-color: var(--meshy-dl-accent);
+}
+
+.meshy-model-list {
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 4px;
+}
+
+.meshy-model-list::-webkit-scrollbar {
+  width: 4px;
+}
+.meshy-model-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.meshy-empty-msg {
+  padding: 24px 10px;
+  text-align: center;
+  color: var(--meshy-dl-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.meshy-model-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.meshy-model-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.meshy-model-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #111;
+  flex-shrink: 0;
+}
+
+.meshy-model-thumb-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--meshy-dl-text-muted);
+  flex-shrink: 0;
+}
+
+.meshy-model-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.meshy-model-name {
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meshy-model-id {
+  font-size: 10px;
+  color: var(--meshy-dl-text-muted);
+  font-family: monospace;
+}
+
+.meshy-model-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.meshy-btn-pill {
+  background: var(--meshy-dl-pill-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #e5e5e5;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 4px 7px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.meshy-btn-pill:hover {
+  background: var(--meshy-dl-accent);
+  color: #000;
+  border-color: var(--meshy-dl-accent);
+}
+
+/* Minimized Floating Bubble */
+.meshy-min-bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--meshy-dl-accent);
+  color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(197, 249, 85, 0.45);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  user-select: none;
+}
+
+.meshy-min-bubble:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(197, 249, 85, 0.6);
+}
+
+.meshy-bubble-icon {
+  font-size: 20px;
+}
+
+.meshy-bubble-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ff3e8f;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 12px;
+  border: 2px solid #0e0f12;
+}
+
+/* Toast */
+.meshy-toast {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  z-index: 2147483645;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s;
+  pointer-events: none;
+}
+
+.meshy-toast.success {
+  background: #192b15;
+  border: 1px solid var(--meshy-dl-accent);
+  color: var(--meshy-dl-accent);
+}
+
+.meshy-toast.error {
+  background: #3b1418;
+  border: 1px solid #ff4d6d;
+  color: #ff99aa;
+}
+
+.meshy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Injected Badge on Asset Cards */
+.meshy-card-dl-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 50;
+  background: rgba(14, 15, 18, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--meshy-dl-accent);
+  color: var(--meshy-dl-accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.meshy-card-dl-badge:hover {
+  background: var(--meshy-dl-accent);
+  color: #000;
+  transform: scale(1.05);
+}
+
+.meshy-card-dl-badge.is-animated-badge {
+  border-color: #ffd166;
+  background: rgba(40, 30, 10, 0.9);
+  color: #ffd166;
+  box-shadow: 0 0 12px rgba(255, 209, 102, 0.4);
+}
+
+.meshy-card-dl-badge.is-animated-badge:hover {
+  background: #ffd166;
+  color: #000;
+}
+
+.meshy-btn-pill.meshy-btn-inspect {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #a0c4ff;
+  font-size: 10.5px;
+  padding: 3px 8px;
+}
+
+.meshy-btn-pill.meshy-btn-inspect:hover {
+  background: rgba(160, 196, 255, 0.2);
+  border-color: #a0c4ff;
+  color: #ffffff;
+}
+
+.is-animated-card {
+  border-left: 3px solid #ffd166 !important;
+  background: rgba(255, 209, 102, 0.04) !important;
+}
+
+.meshy-anim-tag {
+  background: rgba(255, 209, 102, 0.18);
+  border: 1px solid rgba(255, 209, 102, 0.5);
+  color: #ffd166;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
